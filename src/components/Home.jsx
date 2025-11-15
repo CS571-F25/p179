@@ -1,8 +1,17 @@
+import Header from './Header'
+import Hero from './Hero'
+import Projects from './Projects'
+import Footer from './Footer'
 
-import warningImg from '../assets/warning.jpg'
-
-export default function Home (props) {
-    return <div>
-        <img src={warningImg} alt="work in progress" />
+export default function Home() {
+  return (
+    <div className="page-container">
+      <Header />
+      <main className="main-content">
+        <Hero />
+        <Projects />
+      </main>
+      <Footer />
     </div>
+  )
 }

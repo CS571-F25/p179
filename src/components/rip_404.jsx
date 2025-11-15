@@ -1,6 +1,13 @@
+import Header from './Header'
+
 export default function Rip_404 (props) {
-    return <div>
-        <h1>you dag too deep...</h1>
-        <h2>67</h2>
-    </div>
+    return (
+        <div className="page-container">
+            <Header />
+            <main className="page-content" style={{ textAlign: 'center' }}>
+                <h1>you dag too deep...</h1>
+                <h2>67</h2>
+            </main>
+        </div>
+    )
 }
