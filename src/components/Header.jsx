@@ -12,7 +12,7 @@ export default function Header() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="custom-navbar-brand">
-          Your Name
+          Ruben Aguilo Schuurs
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-navbar-toggle" />
         <Navbar.Collapse id="basic-navbar-nav">

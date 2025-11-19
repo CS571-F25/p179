@@ -14,7 +14,7 @@ export default function Projects() {
       <Container>
         <SectionTitle 
           title="Projects" 
-          subtitle="A collection of my work and projects. More coming soon!" 
+          subtitle="My multidisciplinary background, as I explored multiple college opportunities to find a personal fit" 
         />
         <Row className="g-4">
           {projects.map((project) => (
