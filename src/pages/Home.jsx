@@ -1,7 +1,7 @@
-import Header from './Header'
-import Hero from './Hero'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Projects from './Projects'
-import Footer from './Footer'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (

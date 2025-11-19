@@ -1,10 +1,11 @@
 import { HashRouter, Routes, Route } from 'react-router'
-import Home from './components/Home'
-import CV from './components/CV'
-import Calendar from './components/Calendar'
-import Contact from './components/Contact'
-import AIUsage from './components/AIUsage'
-import Rip_404 from './components/rip_404'
+import Home from './pages/Home'
+import CV from './pages/CV'
+import Calendar from './pages/Calendar'
+import Contact from './pages/Contact'
+import AIUsage from './pages/AIUsage'
+import ProjectDetail from './pages/ProjectDetail'
+import NotFound from './components/NotFound'
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <Route path="/calendar" element={<Calendar/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
       <Route path="/ai-usage" element={<AIUsage/>}></Route>
-      <Route path="/*" element={<Rip_404/>}></Route>
+      <Route path="/project/:id" element={<ProjectDetail/>}></Route>
+      <Route path="/*" element={<NotFound/>}></Route>
     </Routes>
   </HashRouter>
 }

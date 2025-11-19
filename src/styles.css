@@ -102,6 +102,84 @@
   width: 100%;
 }
 
+/* React Bootstrap Navbar Custom Styling */
+.custom-navbar {
+  background-color: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+  padding: 0.75rem 0 !important;
+}
+
+.custom-navbar-brand {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #a855f7 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.custom-navbar-brand:hover {
+  background: linear-gradient(135deg, #c084fc 0%, #e9d5ff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  transform: scale(1.05) !important;
+}
+
+.custom-navbar-toggle {
+  border-color: rgba(168, 85, 247, 0.5) !important;
+}
+
+.custom-navbar-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.25) !important;
+}
+
+.custom-navbar-toggle .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28168, 85, 247, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.custom-nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.custom-nav-link:hover {
+  color: #a855f7 !important;
+  background-color: rgba(168, 85, 247, 0.1) !important;
+}
+
+.custom-nav-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #a855f7, #c084fc) !important;
+  transition: width 0.3s ease !important;
+}
+
+.custom-nav-link:hover::after {
+  width: 80% !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus {
+  color: #a855f7 !important;
+  background-color: rgba(168, 85, 247, 0.15) !important;
+}
+
 /* ============================================
    TYPOGRAPHY - Standardized Titles
    ============================================ */
@@ -161,7 +239,151 @@
 }
 
 .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Override Bootstrap text utilities for dark theme */
+.bg-dark .text-muted,
+.text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ============================================
+   CV COMPONENTS STYLING
+   ============================================ */
+
+.cv-section {
+  margin-bottom: 2rem;
+}
+
+.cv-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #a855f7;
+  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cv-subsection-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+}
+
+.cv-line {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.cv-line:last-child {
+  border-bottom: none;
+}
+
+.cv-date {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.cv-date-text {
+  color: rgba(168, 85, 247, 0.8);
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.cv-content {
+  padding-left: 1rem;
+}
+
+.cv-line-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.25rem;
+}
+
+.cv-line-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #a855f7;
+  margin-bottom: 0.25rem;
+}
+
+.cv-line-location {
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.cv-line-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.cv-skill {
+  background-color: rgba(168, 85, 247, 0.2) !important;
+  color: #c084fc !important;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 500;
+  border-radius: 20px !important;
+}
+
+.cv-skill-level {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.cv-divider {
+  margin: 2rem 0;
+}
+
+.cv-contact-info {
+  margin-bottom: 1.5rem;
+}
+
+.cv-contact-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 0.5rem;
+}
+
+.cv-contact-link {
+  color: #a855f7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cv-contact-link:hover {
+  color: #c084fc;
+  text-decoration: underline;
+}
+
+.cv-contact-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive CV styling */
+@media (max-width: 768px) {
+  .cv-date {
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .cv-content {
+    padding-left: 0;
+  }
+
+  .cv-section-title {
+    font-size: 1.5rem;
+  }
 }
 
 /* Standardized heading styles */
@@ -205,6 +427,73 @@ h2 {
 .card-content {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
+}
+
+/* React Bootstrap Card Custom Styling */
+.custom-card {
+  background-color: rgba(20, 20, 20, 0.9) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3) !important;
+  border-color: #a855f7 !important;
+}
+
+/* Project Card Link Styling */
+.project-card-link {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-card-link:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4) !important;
+  border-color: #a855f7 !important;
+}
+
+.custom-card-header {
+  background-color: rgba(168, 85, 247, 0.1) !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3) !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.custom-card-title {
+  color: #a855f7 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.custom-card-body {
+  padding: 1.5rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.custom-card-body p,
+.custom-card-body .card-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.custom-card-body ul,
+.custom-card-body li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.custom-card-body a {
+  color: #a855f7 !important;
+}
+
+.custom-card-body a:hover {
+  color: #c084fc !important;
+}
+
+.custom-card-body strong {
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* ============================================
@@ -311,6 +600,29 @@ h2 {
   color: rgba(255, 255, 255, 0.4);
 }
 
+/* React Bootstrap Form Custom Styling */
+.custom-card-body .form-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+.custom-card-body .form-control {
+  background-color: rgba(20, 20, 20, 0.8) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.custom-card-body .form-control:focus {
+  background-color: rgba(20, 20, 20, 0.9) !important;
+  border-color: #a855f7 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.25) !important;
+}
+
+.custom-card-body .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
 /* ============================================
    HOME PAGE SPECIFIC
    ============================================ */
@@ -344,6 +656,31 @@ h2 {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 2rem;
   line-height: 1.6;
+}
+
+/* Hero Section Text Styling */
+.hero-section {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-section .lead,
+.hero-subtitle-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 1.25rem !important;
+}
+
+.hero-section p,
+.hero-description-text {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 1.1rem !important;
+}
+
+.hero-section h1 {
+  color: #a855f7 !important;
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e9d5ff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
 .hero-cta {
