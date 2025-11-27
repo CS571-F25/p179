@@ -386,6 +386,100 @@
   }
 }
 
+/* ============================================
+   CALENDAR STYLING
+   ============================================ */
+
+.calendar-week-view {
+  background-color: rgba(20, 20, 20, 0.5);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.calendar-header {
+  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-day-header {
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.calendar-grid-container {
+  position: relative;
+  background-color: rgba(10, 10, 10, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+}
+
+.calendar-time-column {
+  padding-right: 0.5rem;
+  text-align: right;
+}
+
+.calendar-time-slot {
+  padding-right: 0.5rem;
+}
+
+.calendar-day-column {
+  border-left: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.calendar-event {
+  transition: all 0.2s ease;
+}
+
+.calendar-event:hover {
+  background-color: rgba(168, 85, 247, 0.5) !important;
+  border-color: #a855f7 !important;
+  transform: scale(1.02);
+  z-index: 20 !important;
+  box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
+}
+
+/* Responsive calendar styling */
+@media (max-width: 768px) {
+  .calendar-week-view {
+    padding: 0.5rem;
+  }
+
+  .calendar-day-header {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .calendar-time-slot {
+    font-size: 0.65rem;
+  }
+}
+
+/* Modal styling for dark theme */
+.modal-content {
+  background-color: rgba(20, 20, 20, 0.95) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(168, 85, 247, 0.3) !important;
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.btn-close {
+  filter: invert(1) !important;
+}
+
 /* Standardized heading styles */
 h1 {
   color: #a855f7;

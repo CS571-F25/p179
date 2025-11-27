@@ -1,11 +1,11 @@
 import Header from '../components/Header'
 import { Container } from 'react-bootstrap'
 import PageTitle from '../components/PageTitle'
-import CVSection from '../components/CVSection'
-import CVLine from '../components/CVLine'
-import CVSkill from '../components/CVSkill'
-import CVDivider from '../components/CVDivider'
-import CVContactInfo from '../components/CVContactInfo'
+import CVSection from '../components/cv/CVSection'
+import CVLine from '../components/cv/CVLine'
+import CVSkill from '../components/cv/CVSkill'
+import CVDivider from '../components/cv/CVDivider'
+import CVContactInfo from '../components/cv/CVContactInfo'
 
 export default function CV(props) {
     return (
