@@ -10,7 +10,7 @@ export default function Projects() {
   const projects = getAllProjects()
 
   return (
-    <section id="projects" className="py-5">
+    <section id="projects" className="pt-3 pb-5">
       <Container>
         <SectionTitle 
           title="Projects" 

@@ -28,7 +28,7 @@ export default function CalendarEvent({ event, style, formatTime, isPending = fa
             title={event.summary || 'Event'}
         >
             <div className="fw-bold" style={{ fontSize: '0.7rem', color: 'rgba(255, 255, 255, 1)' }}>
-                {event.summary || 'No Title'}
+                {event.summary || 'Busy'}
                 {isPending && <span style={{ fontSize: '0.6rem', opacity: 0.8 }}> (Pending)</span>}
             </div>
             {startTime && (

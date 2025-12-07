@@ -13,21 +13,23 @@ import { Link } from 'react-router'
 
 export default function Hero() {
   return (
-    <section className="py-5 mb-5 hero-section">
+    <div className="hero-content-background">
       <Container>
-        <Row className="justify-content-center text-center">
+        <Row className="justify-content-center">
           <Col lg={8}>
-            <h1 className="display-3 mb-4">Ruben A.S.</h1>
-            <p className="lead mb-3 hero-subtitle-text">
-              "Towards becoming a quantum physicist and engineer"
-            </p>
-            <p className="mb-4 hero-description-text">
-              I like fixing problems, and occasionally succeed!
-            </p>
+            <div className="text-center hero-content-inner">
+              <h1 className="display-3 mb-4">Ruben A.S.</h1>
+              <p className="lead mb-3 hero-subtitle-text">
+                "Towards becoming a quantum physicist and engineer"
+              </p>
+              <p className="hero-description-text">
+                I like fixing problems, and occasionally succeed!
+              </p>
+            </div>
           </Col>
         </Row>
       </Container>
-    </section>
+    </div>
   )
 }
 

@@ -1,12 +1,13 @@
-export default function SectionHeading({ children, className = '' }) {
+export default function SectionHeading({ children, className = '', level = 2 }) {
+  const HeadingTag = `h${Math.min(Math.max(level, 2), 6)}`;
   return (
-    <h3 className={`mb-3 ${className}`} style={{ 
-      color: 'rgba(255, 255, 255, 0.9)', 
+    <HeadingTag className={`mb-3 ${className}`} style={{ 
+      color: 'rgba(255, 255, 255, 0.95)', 
       fontWeight: 600,
       fontSize: '1.5rem'
     }}>
       {children}
-    </h3>
+    </HeadingTag>
   )
 }
 

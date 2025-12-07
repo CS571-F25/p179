@@ -211,7 +211,7 @@
 
 .section-subtitle {
   text-align: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 3rem;
   font-size: 1.1rem;
 }
@@ -239,13 +239,13 @@
 }
 
 .text-muted {
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* Override Bootstrap text utilities for dark theme */
 .bg-dark .text-muted,
 .text-muted {
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* ============================================
@@ -314,7 +314,7 @@
 
 .cv-line-location {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   font-style: italic;
   margin-bottom: 0.5rem;
 }
@@ -323,6 +323,29 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin-top: 0.75rem;
+}
+
+.cv-line-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.cv-line-bullet-item {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.cv-line-bullet-item::before {
+  content: '•';
+  color: #a855f7;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
 .cv-skill {
@@ -367,6 +390,19 @@
 
 .cv-contact-text {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.cv-contact-oneline {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cv-contact-separator {
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0.5rem;
 }
 
 /* Responsive CV styling */
@@ -684,7 +720,8 @@ h2 {
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
   border-color: #a855f7;
   box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
 }
@@ -717,6 +754,30 @@ h2 {
   color: rgba(255, 255, 255, 0.4) !important;
 }
 
+/* Modal Form Input Styling for Better Contrast */
+.modal-body .form-control {
+  background-color: rgba(30, 30, 30, 0.95) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.modal-body .form-control:focus {
+  background-color: rgba(35, 35, 35, 0.95) !important;
+  border-color: #a855f7 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.25) !important;
+}
+
+.modal-body .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
+}
+
+.modal-body .form-label {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500 !important;
+}
+
 /* ============================================
    HOME PAGE SPECIFIC
    ============================================ */
@@ -747,7 +808,7 @@ h2 {
 
 .hero-description {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -755,6 +816,22 @@ h2 {
 /* Hero Section Text Styling */
 .hero-section {
   color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-content-background {
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(168, 85, 247, 0.3);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 1rem 0 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.hero-content-inner {
+  padding-top: 1rem;
 }
 
 .hero-section .lead,
@@ -767,6 +844,7 @@ h2 {
 .hero-description-text {
   color: rgba(255, 255, 255, 0.7) !important;
   font-size: 1.1rem !important;
+  padding-bottom: 1rem;
 }
 
 .hero-section h1 {
@@ -861,6 +939,11 @@ h2 {
   margin-top: auto;
 }
 
+.footer-custom {
+  background-color: rgba(5, 5, 5, 0.98) !important;
+  border-top: 1px solid rgba(168, 85, 247, 0.3);
+}
+
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -872,7 +955,7 @@ h2 {
 }
 
 .footer-text {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
 }
 

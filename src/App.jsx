@@ -14,7 +14,6 @@ function App() {
       <Route path="/" element={<Home/>}> </Route>
       <Route path="/cv" element={<CV/>}></Route>
       <Route path="/calendar" element={<Calendar/>}></Route>
-      <Route path="/contact" element={<Contact/>}></Route>
       <Route path="/ai-usage" element={<AIUsage/>}></Route>
       <Route path="/project/:id" element={<ProjectDetail/>}></Route>
       <Route path="/*" element={<NotFound/>}></Route>
@@ -23,3 +22,6 @@ function App() {
 }
 
 export default App
+
+
+// <Route path="/contact" element={<Contact/>}></Route>

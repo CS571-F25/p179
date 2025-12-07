@@ -11,7 +11,7 @@ export default function NotFound() {
       <Container className="py-5 text-center">
         <PageTitle 
           title="404 - Page Not Found" 
-          subtitle="The page you're looking for doesn't exist." 
+          subtitle="The page you're looking for does not exist :(" 
         />
         <Button as={Link} to="/" variant="primary" size="lg">
           Go Home

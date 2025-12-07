@@ -7,7 +7,7 @@ export default function Header() {
       bg="dark" 
       variant="dark" 
       expand="lg" 
-      className="custom-navbar mb-4"
+      className="custom-navbar mb-0"
       sticky="top"
     >
       <Container>
@@ -20,7 +20,6 @@ export default function Header() {
             <Nav.Link as={Link} to="/" className="custom-nav-link">Home</Nav.Link>
             <Nav.Link as={Link} to="/cv" className="custom-nav-link">CV</Nav.Link>
             <Nav.Link as={Link} to="/calendar" className="custom-nav-link">Calendar</Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="custom-nav-link">Contact Me</Nav.Link>
             <Nav.Link as={Link} to="/ai-usage" className="custom-nav-link">AI Usage</Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -29,3 +28,5 @@ export default function Header() {
   )
 }
 
+
+// <Nav.Link as={Link} to="/contact" className="custom-nav-link">Contact Me</Nav.Link>

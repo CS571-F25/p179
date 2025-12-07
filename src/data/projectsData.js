@@ -8,10 +8,14 @@ export const projectsData = {
     status: "in progress", // Options: "complete", "in progress", "ideating"
     technologies: ["React", "JavaScript", "CSS"],
     images: [
-      { id: 1, alt: "Setup picture", placeholder: "Image 1 placeholder" },
-      { id: 2, alt: "Feedforward and PDH locking diagrams", placeholder: "Image 2 placeholder" },
-      { id: 3, alt: "Fitted data", placeholder: "Image 3 placeholder" },
-      { id: 4, alt: "Herriott Cell", placeholder: "Image 4 placeholder" }
+      { id: 1, alt: "Setup picture", placeholder: "Image 1 placeholder", src: "/images/project1/optical_circuit.jpg" },
+      { id: 2, alt: "Feedforward and PDH locking diagrams", placeholder: "Image 2 placeholder", src: "/images/project1/chip2.jpg" },
+      { id: 3, alt: "Fitted data", placeholder: "Image 3 placeholder", src: "/images/project1/cool_towers.jpg" },
+      { id: 4, alt: "Herriott Cell", placeholder: "Image 4 placeholder", src: "/images/project1/Herriott_Cell_3D_Alpha_Updated.gif" },
+      { id: 5, alt: "Herriott Cell", placeholder: "Image 5 placeholder", src: "/images/project1/herriott_mirrors.png" },
+      { id: 6, alt: "Herriott Cell", placeholder: "Image 6 placeholder", src: "/images/project1/towards_self-het.png" },
+      { id: 7, alt: "Herriott Cell", placeholder: "Image 7 placeholder", src: "/images/project1/servo_bumps.png" },
+      { id: 8, alt: "Herriott Cell", placeholder: "Image 8 placeholder", src: "/images/project1/PosertMCAW2025.JPG" }
     ],
     sections: [
       { title: "Self-heterodyne Measurement", content: "In order to measure the servo bumps, we built a 4km delay self-heterodyne interferometer for our 638nm laser." },
@@ -27,9 +31,9 @@ export const projectsData = {
     status: "complete", // Options: "complete", "in progress", "ideating"
     technologies: ["PyTorch", "Python", ""],
     images: [
-      { id: 1, alt: "MRI scan as example", placeholder: "Image 1 placeholder" },
-      { id: 2, alt: "Graph of training data", placeholder: "Image 2 placeholder" },
-      { id: 3, alt: "More results", placeholder: "Image 3 placeholder" }
+      { id: 1, alt: "MRI scan as example", placeholder: "Image 1 placeholder", src: "/images/project2/mri-scan.jpg" },
+      { id: 2, alt: "Graph of training data", placeholder: "Image 2 placeholder", src: "/images/project2/training-graph.jpg" },
+      { id: 3, alt: "More results", placeholder: "Image 3 placeholder", src: "/images/project2/results.jpg" }
     ],
     sections: [
       { title: "Overview", content: "This section provides an overview of the project, its goals, and key features." },
@@ -42,13 +46,13 @@ export const projectsData = {
     title: "Coupled Heliostat",
     description: "This is a placeholder for your third project. Highlight your best work here.",
     fullDescription: "This is a detailed description of Project 3. Here you can provide comprehensive information about the project, including the problem it solves, the approach taken, challenges faced, and results achieved.",
-    status: "ideating", // Options: "complete", "in progress", "ideating"
+    status: "complete", // Options: "complete", "in progress", "ideating"
     technologies: ["Python", "Django", "PostgreSQL"],
     images: [
-      { id: 1, alt: "Project 3 Screenshot 1", placeholder: "Image 1 placeholder" },
-      { id: 2, alt: "Project 3 Screenshot 2", placeholder: "Image 2 placeholder" },
-      { id: 3, alt: "Project 3 Screenshot 3", placeholder: "Image 3 placeholder" },
-      { id: 4, alt: "Project 3 Screenshot 4", placeholder: "Image 4 placeholder" }
+      { id: 1, alt: "Project 3 Screenshot 1", placeholder: "Image 1 placeholder", src: "/images/project3/screenshot1.jpg" },
+      { id: 2, alt: "Project 3 Screenshot 2", placeholder: "Image 2 placeholder", src: "/images/project3/screenshot2.jpg" },
+      { id: 3, alt: "Project 3 Screenshot 3", placeholder: "Image 3 placeholder", src: "/images/project3/screenshot3.jpg" },
+      { id: 4, alt: "Project 3 Screenshot 4", placeholder: "Image 4 placeholder", src: "/images/project3/screenshot4.jpg" }
     ],
     sections: [
       { title: "Overview", content: "This section provides an overview of the project, its goals, and key features." },

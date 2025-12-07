@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />
         <Projects />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

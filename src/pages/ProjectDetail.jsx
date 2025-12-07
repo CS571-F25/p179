@@ -42,7 +42,7 @@ export default function ProjectDetail() {
         {/* Technologies */}
         <Row className="mb-5">
           <Col>
-            <SectionHeading>Technologies Used</SectionHeading>
+            <SectionHeading level={2}>Technologies Used</SectionHeading>
             <div>
               {project.technologies.map((tech, index) => (
                 <TechTag key={index} technology={tech} />
@@ -54,23 +54,50 @@ export default function ProjectDetail() {
         {/* Project Images */}
         <Row className="mb-5">
           <Col>
-            <SectionHeading className="mb-4">Project Images</SectionHeading>
+            <SectionHeading level={2} className="mb-4">Project Images</SectionHeading>
             <Row className="g-4">
               {project.images.map((image) => (
                 <Col key={image.id} md={6} lg={4}>
                   <Card className="text-center">
+                    {image.src ? (
+                      <img 
+                        src={image.src} 
+                        alt={image.alt || image.placeholder}
+                        className="img-fluid"
+                        style={{ 
+                          width: '100%',
+                          height: 'auto',
+                          borderRadius: '8px',
+                          marginBottom: '0.5rem',
+                          objectFit: 'cover'
+                        }}
+                        onError={(e) => {
+                          // Fallback to placeholder if image fails to load
+                          e.target.style.display = 'none';
+                          const placeholder = e.target.parentElement.querySelector('.image-placeholder');
+                          if (placeholder) {
+                            placeholder.style.display = 'flex';
+                          }
+                        }}
+                      />
+                    ) : null}
                     <div 
-                      className="d-flex align-items-center justify-content-center" 
+                      className="d-flex align-items-center justify-content-center image-placeholder" 
+                      role="img"
+                      aria-label={image.alt || image.placeholder}
                       style={{ 
                         minHeight: '200px', 
                         backgroundColor: 'rgba(168, 85, 247, 0.1)',
                         borderRadius: '8px',
-                        border: '2px dashed rgba(168, 85, 247, 0.3)'
+                        border: '2px dashed rgba(168, 85, 247, 0.3)',
+                        display: image.src ? 'none' : 'flex'
                       }}
                     >
                       <p className="text-muted mb-0">{image.placeholder}</p>
                     </div>
-                    <p className="mt-2 mb-0 small text-muted">{image.alt}</p>
+                    {image.alt && (
+                      <p className="mt-2 mb-0 small text-muted">{image.alt}</p>
+                    )}
                   </Card>
                 </Col>
               ))}
