@@ -8,14 +8,14 @@ export const projectsData = {
     status: "in progress", // Options: "complete", "in progress", "ideating"
     technologies: ["React", "JavaScript", "CSS"],
     images: [
-      { id: 1, alt: "Setup picture", placeholder: "Image 1 placeholder", src: "/images/project1/optical_circuit.jpg" },
-      { id: 2, alt: "Feedforward and PDH locking diagrams", placeholder: "Image 2 placeholder", src: "/images/project1/chip2.jpg" },
-      { id: 3, alt: "Fitted data", placeholder: "Image 3 placeholder", src: "/images/project1/cool_towers.jpg" },
-      { id: 4, alt: "Herriott Cell", placeholder: "Image 4 placeholder", src: "/images/project1/Herriott_Cell_3D_Alpha_Updated.gif" },
-      { id: 5, alt: "Herriott Cell", placeholder: "Image 5 placeholder", src: "/images/project1/herriott_mirrors.png" },
-      { id: 6, alt: "Herriott Cell", placeholder: "Image 6 placeholder", src: "/images/project1/towards_self-het.png" },
-      { id: 7, alt: "Herriott Cell", placeholder: "Image 7 placeholder", src: "/images/project1/servo_bumps.png" },
-      { id: 8, alt: "Herriott Cell", placeholder: "Image 8 placeholder", src: "/images/project1/PosertMCAW2025.JPG" }
+      { id: 1, alt: "Optical Circuit Setup", src: "/p179/images/project1/optical_circuit.jpg", description: "In progress optical circuit setup for the feedforward error correction system." },
+      { id: 2, alt: "Custom Controlled Gain Amplifier", src: "/p179/images/project1/chip2.jpg", description: "Schematic diagrams showing the feedforward correction mechanism and Pound-Drever-Hall locking system." },
+      { id: 3, alt: "Self-Heterodyne Setup", src: "/p179/images/project1/towards_self-het.jpg", description: "Printed and soldered PCB for voltage-controlled gain amplification." },
+      { id: 4, alt: "Servo Bumps", src: "/p179/images/project1/servo_bumps.jpg", description: "Self-heterodyne data showing laser linewidth with servo bumps." },
+      { id: 5, alt: "Herriott Cell 3D Simulation", src: "/p179/images/project1/Herriott_Cell_3D_Alpha_Updated.gif", description: "3D simulation of the Herriott Cell design used to produce the 150ns delay for the feedforward correction." },
+      { id: 6, alt: "Herriott Cell Mirror Design", src: "/p179/images/project1/herriott_mirrors.png", description: "Mirror desigg for Herriott Cell." },
+      { id: 7, alt: "MCAW 2025 Poster", src: "/p179/images/project1/PosterMCAW2025.JPG", description: "Presenting poster in MCAW 2025 conference with feedforward content and 1-photon lab results." },
+      { id: 8, alt: "Cooling Towers", src: "/p179/images/project1/cool_towers.jpg", description: "Not feedforward, but cool towers we built for dual-species Rb Cs setup" },
     ],
     sections: [
       { title: "Self-heterodyne Measurement", content: "In order to measure the servo bumps, we built a 4km delay self-heterodyne interferometer for our 638nm laser." },
@@ -31,9 +31,10 @@ export const projectsData = {
     status: "complete", // Options: "complete", "in progress", "ideating"
     technologies: ["PyTorch", "Python", ""],
     images: [
-      { id: 1, alt: "MRI scan as example", placeholder: "Image 1 placeholder", src: "/images/project2/mri-scan.jpg" },
-      { id: 2, alt: "Graph of training data", placeholder: "Image 2 placeholder", src: "/images/project2/training-graph.jpg" },
-      { id: 3, alt: "More results", placeholder: "Image 3 placeholder", src: "/images/project2/results.jpg" }
+      { id: 4, alt: "Presenting at 2024 UW-Madison Undergraduate Symposium", src: "/p179/images/project2/UndergradSymposium24.jpg", description: "Presenting at UW-Madisons 2024 Undergraduate Sympoosium, featuring Henrieta" },
+      { id: 1, alt: "PET scans with & without Alzheimer's Disease", src: "/p179/images/project2/AD_vs_NoAD.png", description: "Examples of two PET scans used for training the model. The left one features Alzheimer's Disease, the right one does not." },
+      { id: 2, alt: "Heatmap of model's true positive and negatives", src: "/p179/images/project2/Features.png", description: "Model's heatmap showing the featuers the model uses to make True Positive and True Negative predictions" },
+      { id: 3, alt: "Model's ROC curve", src: "/p179/images/project2/ROC_Curve.png", description: "Model's ROC curve showing performance metrics" },
     ],
     sections: [
       { title: "Overview", content: "This section provides an overview of the project, its goals, and key features." },
@@ -49,10 +50,14 @@ export const projectsData = {
     status: "complete", // Options: "complete", "in progress", "ideating"
     technologies: ["Python", "Django", "PostgreSQL"],
     images: [
-      { id: 1, alt: "Project 3 Screenshot 1", placeholder: "Image 1 placeholder", src: "/images/project3/screenshot1.jpg" },
-      { id: 2, alt: "Project 3 Screenshot 2", placeholder: "Image 2 placeholder", src: "/images/project3/screenshot2.jpg" },
-      { id: 3, alt: "Project 3 Screenshot 3", placeholder: "Image 3 placeholder", src: "/images/project3/screenshot3.jpg" },
-      { id: 4, alt: "Project 3 Screenshot 4", placeholder: "Image 4 placeholder", src: "/images/project3/screenshot4.jpg" }
+      { id: 1, alt: "Heliostat", src: "/p179/images/project3/Heliostat.jpg", description: "Picture of the heliostat, featuring 4 mirrors controlled by 2 stepper motors." },
+      { id: 2, alt: "Heliostat 2", src: "/p179/images/project3/Heliostat2.jpg", description: "A second perspective of the heliostat." },
+      { id: 3, alt: "Objective Rack", src: "/p179/images/project3/Heliostat_Objective_Rack.jpg", description: "Objective rack used to test the heliostat positioning." },
+      { id: 4, alt: "Observation Rack", src: "/p179/images/project3/Heliostat_Observation_Rack.jpg", description: "Observation rack to test the heliostat positioning." },
+      { id: 5, alt: "Objective View", src: "/p179/images/project3/objective_perspective_view.jpg", description: "View from the observation rack showing the heliostat and the objective rack." },
+      { id: 6, alt: "Motor Control System", src: "/p179/images/project3/motor_control.jpg", description: "Motor control system, including each stepper motor's control, the raspberry pi, and a LCD screen to check heliostat coordinates." },
+      { id: 7, alt: "Stepper Motor", src: "/p179/images/project3/stepper_motor.jpg", description: "Stepper motor." }
+    
     ],
     sections: [
       { title: "Overview", content: "This section provides an overview of the project, its goals, and key features." },
