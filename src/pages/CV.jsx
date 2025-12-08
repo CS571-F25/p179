@@ -6,10 +6,12 @@ import CVLine from '../components/cv/CVLine'
 import CVSkill from '../components/cv/CVSkill'
 import CVDivider from '../components/cv/CVDivider'
 import Card from '../components/Card'
+import AnimatedDotsBackground from '../components/AnimatedDotsBackground'
 
 export default function CV(props) {
     return (
         <div className="page-container">
+            {/* <AnimatedDotsBackground /> */}
             <Header />
             <Container className="py-5" style={{ maxWidth: '900px' }}>
                 <PageTitle 
@@ -19,9 +21,9 @@ export default function CV(props) {
                 
                 {/* Contact Information */}
                 <div className="cv-contact-oneline">
-                    <a href="" className="cv-contact-link">schuurs (at) wisc.edu</a>
-                    <span className="cv-contact-separator"> | </span>
-                    <a href="https://www.linkedin.com/in/ru-s" target="_blank" rel="noopener noreferrer" className="cv-contact-link">LinkedIn</a>
+                    <a href="mailto:schuurs@wisc.edu" className="cv-contact-link" aria-label="Email: schuurs at wisc.edu">schuurs (at) wisc.edu</a>
+                    <span className="cv-contact-separator" aria-hidden="true"> | </span>
+                    <a href="https://www.linkedin.com/in/ru-s" target="_blank" rel="noopener noreferrer" className="cv-contact-link" aria-label="LinkedIn profile, opens in new tab">LinkedIn</a>
                 </div>
 
                 {/* Education */}

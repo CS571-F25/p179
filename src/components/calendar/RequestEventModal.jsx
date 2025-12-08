@@ -50,32 +50,46 @@ export default function RequestEventModal({ show, onHide, onSubmit }) {
     };
 
     return (
-        <Modal show={show} onHide={onHide} size="lg" centered>
+        <Modal 
+            show={show} 
+            onHide={onHide} 
+            size="lg" 
+            centered
+            aria-labelledby="request-meeting-modal-title"
+            aria-describedby="request-meeting-modal-description"
+        >
             <Modal.Header closeButton style={{ backgroundColor: 'rgba(20, 20, 20, 0.95)', borderBottom: '1px solid rgba(168, 85, 247, 0.3)' }}>
-                <Modal.Title style={{ color: '#a855f7' }}>Request a Meeting</Modal.Title>
+                <Modal.Title id="request-meeting-modal-title" style={{ color: '#a855f7' }}>Request a Meeting</Modal.Title>
             </Modal.Header>
             <Modal.Body style={{ backgroundColor: 'rgba(20, 20, 20, 0.95)', color: 'rgba(255, 255, 255, 0.9)' }}>
+                <p id="request-meeting-modal-description" className="visually-hidden">
+                    Fill out the form below to request a meeting. All fields marked with an asterisk are required.
+                </p>
                 <Form action="https://formspree.io/f/mgvgygpn" method="POST" onSubmit={handleSubmit}>
                     <Row>
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="title">
-                                <Form.Label>Event Title *</Form.Label>
+                                <Form.Label htmlFor="title">Event Title *</Form.Label>
                                 <Form.Control 
+                                    id="title"
                                     type="text" 
                                     name="title" 
                                     placeholder="Meeting Title" 
                                     required
+                                    aria-required="true"
                                 />
                             </Form.Group>
                         </Col>
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="day">
-                                <Form.Label>Day *</Form.Label>
+                                <Form.Label htmlFor="day">Day *</Form.Label>
                                 <Form.Control 
+                                    id="day"
                                     type="date" 
                                     name="day" 
                                     defaultValue={today}
                                     required
+                                    aria-required="true"
                                 />
                             </Form.Group>
                         </Col>
@@ -84,65 +98,78 @@ export default function RequestEventModal({ show, onHide, onSubmit }) {
                     <Row>
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="startTime">
-                                <Form.Label>Start Time *</Form.Label>
+                                <Form.Label htmlFor="startTime">Start Time *</Form.Label>
                                 <Form.Control 
+                                    id="startTime"
                                     type="time" 
                                     name="startTime" 
                                     defaultValue="12:00"
                                     required
+                                    aria-required="true"
                                 />
                             </Form.Group>
                         </Col>
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="endTime">
-                                <Form.Label>End Time *</Form.Label>
+                                <Form.Label htmlFor="endTime">End Time *</Form.Label>
                                 <Form.Control 
+                                    id="endTime"
                                     type="time" 
                                     name="endTime" 
                                     defaultValue="13:00"
                                     required
+                                    aria-required="true"
                                 />
                             </Form.Group>
                         </Col>
                     </Row>
 
                     <Form.Group className="mb-3" controlId="description">
-                        <Form.Label>Description</Form.Label>
+                        <Form.Label htmlFor="description">Description</Form.Label>
                         <Form.Control 
+                            id="description"
                             as="textarea" 
                             rows={3} 
                             name="description" 
                             placeholder="Brief description of the meeting..."
+                            aria-describedby="description-help"
                         />
+                        <Form.Text id="description-help" className="text-muted" style={{ display: 'none' }}>
+                            Optional: Provide additional details about the meeting
+                        </Form.Text>
                     </Form.Group>
 
                     <Row>
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="requesterName">
-                                <Form.Label>Your Name *</Form.Label>
+                                <Form.Label htmlFor="requesterName">Your Name *</Form.Label>
                                 <Form.Control 
+                                    id="requesterName"
                                     type="text" 
                                     name="requesterName" 
                                     placeholder="John Doe" 
                                     required
+                                    aria-required="true"
                                 />
                             </Form.Group>
                         </Col>
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="requesterEmail">
-                                <Form.Label>Your Email *</Form.Label>
+                                <Form.Label htmlFor="requesterEmail">Your Email *</Form.Label>
                                 <Form.Control 
+                                    id="requesterEmail"
                                     type="email" 
                                     name="requesterEmail" 
                                     placeholder="john@example.com" 
                                     required
+                                    aria-required="true"
                                 />
                             </Form.Group>
                         </Col>
                     </Row>
 
                     <div className="d-flex justify-content-end gap-2">
-                        <Button variant="outline-secondary" onClick={onHide}>
+                        <Button variant="outline-secondary" onClick={onHide} type="button">
                             Cancel
                         </Button>
                         <Button variant="primary" type="submit">

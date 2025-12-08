@@ -199,7 +199,7 @@ export default function Calendar (props) {
             <Header />
             <Container className="py-5">
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                    <h2 style={{ color: 'rgba(255, 255, 255, 0.9)', margin: 0 }}>Calendar</h2>
+                    <h1 style={{ color: 'rgba(255, 255, 255, 0.9)', margin: 0 }}>Calendar</h1>
                     <Button variant="primary" onClick={() => setShowRequestModal(true)}>
                         Request Event
                     </Button>

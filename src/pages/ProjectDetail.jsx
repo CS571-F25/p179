@@ -57,7 +57,7 @@ function ImageBlock({ image, onImageClick, imageIndex, totalImages }) {
           <img
             className="project-image"
             src={image.src}
-            alt={image.alt || ''}
+            alt={image.alt || `Project image ${imageIndex + 1}`}
             onLoad={handleImageLoad}
             onError={handleImageError}
             style={{
@@ -95,7 +95,7 @@ function ImageBlock({ image, onImageClick, imageIndex, totalImages }) {
       )}
       {(image.alt || image.description) && imageLoaded && !imageError && (
         <div className="project-image-caption">
-          {image.alt && <h3 className="mb-1 fw-semibold">{image.alt}</h3>}
+          {image.alt && <p className="mb-1 fw-semibold" style={{ fontSize: '1.1rem' }}>{image.alt}</p>}
           {image.description && (
             <p id={`image-desc-${image.id}`} className="mb-0 small text-muted">{image.description}</p>
           )}
@@ -139,7 +139,7 @@ function ImageModal({ show, onHide, image, images, currentIndex, onNavigate }) {
         <div className="modal-image-container">
           <img
             src={image.src}
-            alt={image.alt || ''}
+            alt={image.alt || `Project image ${currentIndex + 1}`}
             className="modal-image"
           />
         </div>

@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default function AnimatedDotsBackground({ 
-  columns = 12, 
-  rows = 8, 
-  maxDistance = 150, 
-  maxScale = 2.5,
-  baseSize = 4 
+  columns = 10, 
+  rows = 15, 
+  maxDistance = 200, 
+  maxScale = 3,
+  baseSize = 1.5 
 }) {
   const [mousePosition, setMousePosition] = useState({ x: -1000, y: -1000 })
   const [dots, setDots] = useState([])
@@ -21,8 +21,9 @@ export default function AnimatedDotsBackground({
       const row = Math.floor(i / columns)
       
       // Calculate position as percentage for grid layout
-      const xPercent = (col / (columns - 1)) * 100
-      const yPercent = (row / (rows - 1)) * 100
+      // Handle edge case when columns or rows is 1
+      const xPercent = columns > 1 ? (col / (columns - 1)) * 100 : 50
+      const yPercent = rows > 1 ? (row / (rows - 1)) * 100 : 50
       
       newDots.push({
         id: i,
@@ -35,7 +36,7 @@ export default function AnimatedDotsBackground({
     setDots(newDots)
   }, [columns, rows, baseSize])
 
-  // Track mouse position - attach to parent hero section
+  // Track mouse position - attach to document for full page coverage
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (containerRef.current) {
@@ -48,20 +49,10 @@ export default function AnimatedDotsBackground({
       }
     }
 
-    const handleMouseLeave = () => {
-      // Reset mouse position when leaving the container
-      setMousePosition({ x: -1000, y: -1000 })
-    }
-
-    // Attach to the parent hero section so it works even over text
-    const heroSection = containerRef.current?.parentElement
-    if (heroSection) {
-      heroSection.addEventListener('mousemove', handleMouseMove, { passive: true })
-      heroSection.addEventListener('mouseleave', handleMouseLeave)
-      return () => {
-        heroSection.removeEventListener('mousemove', handleMouseMove)
-        heroSection.removeEventListener('mouseleave', handleMouseLeave)
-      }
+    // Attach to document so it works across the entire page
+    document.addEventListener('mousemove', handleMouseMove, { passive: true })
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
 
@@ -70,19 +61,25 @@ export default function AnimatedDotsBackground({
     return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
   }
 
+  if (dots.length === 0) {
+    return null // Don't render until dots are generated
+  }
+
   return (
     <div 
       ref={containerRef}
       className="animated-dots-background"
       style={{
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'visible',
         pointerEvents: 'none',
-        zIndex: 0
+        zIndex: 0,
+        backgroundColor: 'transparent',
+        isolation: 'isolate'
       }}
     >
       {dots.map((dot) => {
@@ -101,17 +98,20 @@ export default function AnimatedDotsBackground({
         
         // Calculate scale based on distance (closer = bigger)
         let scale = 1
-        if (distance < maxDistance && mousePosition.x > 0 && mousePosition.y > 0) {
-          // Scale from 1 to maxScale as distance goes from maxDistance to 0
+        // Only scale if mouse is within the container bounds
+        if (distance < maxDistance && mousePosition.x >= 0 && mousePosition.y >= 0 && 
+            mousePosition.x <= containerWidth && mousePosition.y <= containerHeight) {
           const proximity = 1 - (distance / maxDistance)
           scale = 1 + (maxScale - 1) * proximity
         }
         
         // Calculate opacity based on distance (closer = more visible)
-        let opacity = 0.4
-        if (distance < maxDistance && mousePosition.x > 0 && mousePosition.y > 0) {
+        // Base opacity ensures dots are always visible - increased significantly for visibility behind Hero's dark background
+        let opacity = 0.7 // Increased base opacity to compensate for Hero's dark background
+        if (distance < maxDistance && mousePosition.x >= 0 && mousePosition.y >= 0 &&
+            mousePosition.x <= containerWidth && mousePosition.y <= containerHeight) {
           const proximity = 1 - (distance / maxDistance)
-          opacity = 0.4 + 0.6 * proximity
+          opacity = 0.7 + 0.3 * proximity // Max opacity 1.0 when proximity is 1
         }
         
         return (
@@ -124,13 +124,17 @@ export default function AnimatedDotsBackground({
               top: `${dot.y}%`,
               width: `${dot.baseSize}px`,
               height: `${dot.baseSize}px`,
+              minWidth: `${dot.baseSize}px`,
+              minHeight: `${dot.baseSize}px`,
               borderRadius: '50%',
-              backgroundColor: 'rgba(255, 255, 255, 0.6)',
+              backgroundColor: 'rgba(255, 255, 255, 1)',
               transform: `translate(-50%, -50%) scale(${scale})`,
-              opacity: opacity,
+              opacity: Math.max(opacity, 0.6), // Increased minimum visibility to compensate for Hero background
               transition: 'transform 0.15s ease-out, opacity 0.15s ease-out',
               pointerEvents: 'none',
-              willChange: 'transform, opacity'
+              willChange: 'transform, opacity',
+              display: 'block',
+              visibility: 'visible'
             }}
           />
         )

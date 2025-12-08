@@ -37,16 +37,16 @@ export const projectsData = {
       { id: 3, alt: "Model's ROC curve", src: "/p179/images/project2/ROC_Curve.png", description: "Model's ROC curve showing performance metrics" },
     ],
     sections: [
-      { title: "Overview", content: "This section provides an overview of the project, its goals, and key features." },
-      { title: "Technical Details", content: "Here you can describe the technical architecture, frameworks used, and implementation details." },
-      { title: "Results", content: "Share the outcomes, metrics, or achievements of this project." }
+      { title: "Results", content: "Our model, built in PyTorch, achieved an accuracy of 88% and a ROC-AUC of 98.3% on the test set. The model was able to distinguish between Alzheimer's Disease and healthy individuals with a high degree of accuracy." },
+      { title: "Alzheimer's Disease Diagnosis", content: "Alzheimer's Disease literature is complex. The source of the disease is not well understood, and diagnosis is still evolving and imperfect. A high acurracy model would not replace the need for doctor evaluation, but complement it at most" },
+      { title: "Interpretability", content: "An interesting path to explore with the model was to implement interpretability techniques to attempt to increase the literature in the field. We attempted a few implementations, including Guided Grad-CAM." },
     ]
   },
   3: {
     id: 3,
     title: "Coupled Heliostat",
-    description: "This is a placeholder for your third project. Highlight your best work here.",
-    fullDescription: "This is a detailed description of Project 3. Here you can provide comprehensive information about the project, including the problem it solves, the approach taken, challenges faced, and results achieved.",
+    description: "Project focused on improving the performance of a dual-axis coupled heliostat reflector for a concentrated solar power (CSP) field. The goal was to develop a functioning prototype to demonstrate the feasibility of the technology for large-scale implementation.",
+    fullDescription: "Heliostats and concentrated solar power fields are expensive technologies to build. In this project, we designed and built a dual-axis coupled heliostat to demonstrate the feasibility of a cost-reduced implementation, using 2 stepper motors for 4 mirrors rather than 2 motors per mirror.",
     status: "complete", // Options: "complete", "in progress", "ideating"
     technologies: ["Python", "Django", "PostgreSQL"],
     images: [
@@ -60,9 +60,9 @@ export const projectsData = {
     
     ],
     sections: [
-      { title: "Overview", content: "This section provides an overview of the project, its goals, and key features." },
-      { title: "Technical Details", content: "Here you can describe the technical architecture, frameworks used, and implementation details." },
-      { title: "Results", content: "Share the outcomes, metrics, or achievements of this project." }
+      { title: "Stepper Motors", content: "This implementation features two stepper motors to control the azimuthal and altitute coordinates. The stepper motors are calibrated with physical buttons at both coordinate minima to define the home reference points." },
+      { title: "Arduino Firmware", content: "The stepper motors are controlled by an Arduino Uno board, including the homing mechanism, manual coordinates and solar tracking algorithm" }
+      ,{ title: "Manual Coordinates vs Solar Tracking algorithm", content: "The heliostat can be manually controlled by inputting manual coordinates, and has a solar tracking algorithm to reflect based on the solar position if given altitude and latitude coordinates of the heliostat." },
     ]
   }
 }

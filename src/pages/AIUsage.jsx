@@ -18,7 +18,7 @@ export default function AIUsage() {
             I'm strongly impressed by the development allowed by this AI, to the point where I deem it important to provide this disclosure.
           </p>          
 
-          <h4 className="cv-subsection-title mb-3 mt-4">Development Tools</h4>
+          <h3 className="cv-subsection-title mb-3 mt-4">Development Tools</h3>
           <p className="card-text mb-3">
             The backbones of this website have been built entirely using Cursor AI. This includes:
           </p>
@@ -28,7 +28,7 @@ export default function AIUsage() {
             <li className="mb-2">The entire CSS styling</li>
           </ul>
 
-          <h4 className="cv-subsection-title mb-3 mt-4">Personal work</h4>
+          <h3 className="cv-subsection-title mb-3 mt-4">Personal work</h3>
           <p className="card-text mb-3">
             My own work specifically included:
           </p>
@@ -38,7 +38,7 @@ export default function AIUsage() {
             <li className="mb-2">The majority of the design choices</li>
           </ul>
 
-          <h4 className="cv-subsection-title mb-3 mt-4">Content Generation</h4>
+          <h3 className="cv-subsection-title mb-3 mt-4">Content Generation</h3>
           <p className="card-text mb-4">
             "Placeholder content and initial structure were generated with AI assistance. All content has been reviewed, customized, and verified to reflect accurate information. The final content decisions and personal information were made and provided by the developer."
           </p>

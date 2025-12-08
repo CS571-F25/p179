@@ -8,10 +8,10 @@ export default function CalendarNavigation({ weekDays, formatDate, goToPreviousW
             </Button>
 
             <div className="text-center">
-                <h3 className="mb-0" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                <h2 className="mb-0" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.25rem' }}>
                     {formatDate(weekDays[0])} - {formatDate(weekDays[6])}
-                </h3>
-                <Button variant="link" onClick={goToCurrentWeek} className="p-0">
+                </h2>
+                <Button variant="link" onClick={goToCurrentWeek} className="p-0" aria-label="Go to current week">
                     Go to Current Week
                 </Button>
             </div>
