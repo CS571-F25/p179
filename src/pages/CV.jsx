@@ -189,7 +189,7 @@ export default function CV(props) {
                 <div className="cv-pdf-link text-center mt-4">
                     <small style={{ color: 'rgba(255, 255, 255, 0.75)', fontStyle: 'italic' }}>
                         prefer to see my 100% non-ai latex skills instead?{' '}
-                        <a href="/RubenAguiloSchuurs_CV.pdf" target="_blank" rel="noopener noreferrer" className="cv-contact-link" style={{ fontSize: 'inherit' }}>
+                        <a href="/p179/RubenAguiloSchuurs_CV.pdf" target="_blank" rel="noopener noreferrer" className="cv-contact-link" style={{ fontSize: 'inherit' }}>
                             check the PDF version
                         </a>
                     </small>
